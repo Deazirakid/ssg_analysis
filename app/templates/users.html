@@ -1,0 +1,15 @@
+{% extends "base.html" %}{% import "_ui.html" as ui %}
+{% block filters %}{% endblock %}
+{% block content %}
+<section class="grid g-2">
+  <div class="card"><div class="card-head"><div><h3>Accounts</h3><p class="hint">The built-in admin comes from .env. Viewers can see every dashboard but not admin pages, Swagger or keys.</p></div>
+    <div class="actions"><button class="btn primary" id="u-new"><i data-lucide="user-plus"></i>New account</button></div></div>
+    <div class="tbl-wrap"><table class="tbl" id="t-users"></table></div></div>
+  <div class="card"><div class="card-head"><div><h3>API keys</h3><p class="hint">For external apps: send <code>X-API-Key: ssk_…</code> or <code>?api_key=</code>. Keys are stored hashed and shown once.</p></div>
+    <div class="actions"><a class="btn" href="/docs" target="_blank"><i data-lucide="braces"></i>Swagger</a><button class="btn primary" id="k-new"><i data-lucide="key-round"></i>New key</button></div></div>
+    <div class="tbl-wrap"><table class="tbl" id="t-keys"></table></div></div>
+</section>
+<section class="card"><div class="card-head"><div><h3>Quick start</h3><p class="hint">Example requests with an API key</p></div></div>
+<div class="code" id="k-example"></div></section>
+{% endblock %}
+{% block scripts %}<script src="/static/js/pages/users.js?v=7"></script>{% endblock %}

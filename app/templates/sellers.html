@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% import "_ui.html" as ui %}
+{% block head %}<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>{% endblock %}
+{% block content %}
+<div class="callout"><i data-lucide="info"></i><div>ss.ge doesn't expose agency names in search results. A poster with <b>5+ active listings</b> is counted as a broker or agency. Posters are pseudonymous hashes; no names or phone numbers are stored.</div></div>
+<section class="grid g-kpi" id="s-kpis"></section>
+<section class="grid g-21">
+  {{ ui.chart('c-broker', 'Broker share by neighbourhood', 'Share of listings from brokers/agencies', 'tall') }}
+  {{ ui.table('t-posters', 'Most active posters', 'Pseudonymous IDs', '560px') }}
+</section>
+{{ ui.table('t-sell-area', 'Broker vs owner pricing by neighbourhood', 'Median USD/m²', '420px') }}
+{% endblock %}
+{% block scripts %}<script src="/static/js/charts.js?v=7"></script><script src="/static/js/pages/sellers.js?v=7"></script>{% endblock %}

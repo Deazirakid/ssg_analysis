@@ -1,0 +1,10 @@
+{% extends "base.html" %}{% import "_ui.html" as ui %}
+{% block content %}
+<section class="grid g-kpi" id="q-kpis"></section>
+{{ ui.table('t-low', 'Suspiciously low prices', 'Below 50% of the neighbourhood + room-count median (10+ comparables) · poster = their active listing count', '480px') }}
+<section class="grid g-2">
+  {{ ui.table('t-dup', 'Duplicate clusters (reposts)', 'Same type, deal, price, area, floor and address across different listing IDs', '480px') }}
+  {{ ui.table('t-title', 'Same title in many neighbourhoods', 'Possible template or bait listings', '480px') }}
+</section>
+{% endblock %}
+{% block scripts %}<script src="/static/js/pages/quality.js?v=7"></script>{% endblock %}

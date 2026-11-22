@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }} · ss.ge Market</title>
+<script>try{const t=localStorage.getItem('ssge.theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/app.css?v=7">
+<script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+{% block head %}{% endblock %}
+</head>
+<body data-page="{{ page }}" data-role="{{ role }}">
+<div class="shell">
+  <aside class="side" id="side">
+    <div class="brand"><div class="logo">SS</div><div>Market Panel<small>ss.ge real estate intelligence</small></div></div>
+    <nav class="nav">
+      {% for group, items in nav.items() %}
+      <div class="nav-group">{{ group }}</div>
+      {% for key, v in items %}
+      <a href="{{ v[0] }}" data-nav data-key="{{ key }}" class="{{ 'on' if page == key }}"><i data-lucide="{{ v[2] }}"></i>{{ v[1] }}{% if key == 'alerts' %}<span class="count" id="nav-alerts" hidden></span>{% endif %}</a>
+      {% endfor %}
+      {% endfor %}
+      {% if role == 'admin' %}
+      <a href="/docs" target="_blank" rel="noopener"><i data-lucide="braces"></i>API docs (Swagger)<i data-lucide="arrow-up-right" style="margin-left:auto;width:13px;height:13px"></i></a>
+      {% endif %}
+    </nav>
+    <div class="side-foot">
+      <div class="me"><div class="avatar">{{ user[:2] }}</div><div class="who">{{ user }}<small>{{ role }}</small></div>
+        <form method="post" action="/logout"><button class="icon-btn" title="Sign out" type="submit"><i data-lucide="log-out"></i></button></form>
+      </div>
+    </div>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <button class="icon-btn menu-btn" onclick="document.getElementById('side').classList.toggle('open')" aria-label="Menu"><i data-lucide="menu"></i></button>
+      <div class="crumbs"><span class="path" id="snap">ss.ge market</span><h1>{{ title }}</h1></div>
+      <div class="top-actions">
+        <button class="search-btn" id="open-palette"><i data-lucide="search"></i><span>Jump to page or listing ID…</span><kbd>Ctrl K</kbd></button>
+        <div style="position:relative">
+          <button class="icon-btn" id="bell" title="Alerts"><i data-lucide="bell"></i><span class="dot" id="bell-dot" hidden></span></button>
+          <div class="drop" id="bell-drop"><div class="head">Alerts<button class="btn ghost" id="bell-read">Mark all read</button></div><div id="bell-list"><div class="empty">No alerts yet</div></div>
+            <a class="al" href="/alerts" style="text-align:center;color:var(--accent)">Manage saved searches →</a></div>
+        </div>
+        <button class="icon-btn" id="theme" title="Toggle theme"><i data-lucide="sun-moon"></i></button>
+      </div>
+    </header>
+    <div class="content">
+      {% if desc %}<p class="page-desc">{{ desc }}</p>{% endif %}
+      {% block filters %}<div id="filters" class="filters"></div>{% endblock %}
+      {% block content %}{% endblock %}
+    </div>
+  </main>
+</div>
+<div class="overlay" id="palette"><div class="palette"><input id="palette-q" placeholder="Search pages, or type a listing ID…" autocomplete="off"><div class="items" id="palette-items"></div></div></div>
+<div class="overlay" id="modal"><div class="modal" id="modal-body"></div></div>
+<div class="toast" id="toast"></div>
+<script>window.NAV = {{ nav|tojson }};</script>
+<script src="/static/js/common.js?v=7"></script>
+<script src="/static/js/filters.js?v=7"></script>
+<script src="/static/js/shell.js?v=7"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

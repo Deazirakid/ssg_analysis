@@ -1,0 +1,22 @@
+{% extends "base.html" %}{% import "_ui.html" as ui %}
+{% block head %}<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>{% endblock %}
+{% block content %}
+<section class="card">
+  <div class="card-head"><div><h3>Rental yield by neighbourhood</h3><p class="hint">Gross yield = median rent USD/m² × 12 ÷ median sale USD/m² for the selected property type. Payback = sale price ÷ annual rent. Deal filter is ignored here.</p></div></div>
+  <div class="grid g-21">
+    <div class="chart tall"><canvas id="c-yield"></canvas></div>
+    <div class="tbl-wrap" style="max-height:560px"><table class="tbl" id="t-yield"></table></div>
+  </div>
+</section>
+<section class="grid g-2">
+  {{ ui.chart('c-dist', 'Districts: price spread', 'Median and interquartile range of USD/m²') }}
+  {{ ui.chart('c-scatter', 'Area vs price', 'Random sample of 2,500 listings · hover for neighbourhood') }}
+</section>
+<section class="grid g-3">
+  {{ ui.chart('c-floor', 'Floor level', 'Median USD/m² by floor', 'short') }}
+  {{ ui.chart('c-build', 'New build vs resale', 'Median USD/m²', 'short') }}
+  {{ ui.chart('c-amen', 'Furnished · metro', 'Median USD/m²', 'short') }}
+</section>
+{{ ui.table('t-streets', 'Most expensive streets', 'Streets with 10+ listings, by median USD/m²', '480px') }}
+{% endblock %}
+{% block scripts %}<script src="/static/js/charts.js?v=7"></script><script src="/static/js/analytics.js?v=7"></script>{% endblock %}

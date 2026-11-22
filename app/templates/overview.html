@@ -1,0 +1,19 @@
+{% extends "base.html" %}{% import "_ui.html" as ui %}
+{% block head %}<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>{% endblock %}
+{% block content %}
+<section class="grid g-kpi" id="kpis"></section>
+<section class="grid g-2">
+  {{ ui.chart('c-hood-m2', 'Median USD per m² by neighbourhood', '25 neighbourhoods with the most listings under current filters', 'tall') }}
+  {{ ui.chart('c-hood-n', 'Listing count by neighbourhood', 'Where supply is concentrated', 'tall') }}
+</section>
+<section class="grid g-2">
+  {{ ui.chart('c-daily', 'New listings per day', 'Last 60 days, by listing creation date') }}
+  {{ ui.chart('c-daily-m2', 'Median asking USD/m² of new listings', 'Daily median, last 60 days') }}
+</section>
+<section class="grid g-3">
+  {{ ui.chart('c-hist', 'Price distribution', 'Listings per USD/m² band (1st–98th percentile)') }}
+  {{ ui.chart('c-rooms', 'By room count', 'Median USD/m²') }}
+  {{ ui.chart('c-mix', 'Market mix', 'Listings by property type (ignores type/deal filter)') }}
+</section>
+{% endblock %}
+{% block scripts %}<script src="/static/js/charts.js?v=7"></script><script src="/static/js/overview.js?v=7"></script>{% endblock %}

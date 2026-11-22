@@ -1,0 +1,15 @@
+{% extends "base.html" %}{% import "_ui.html" as ui %}
+{% block content %}
+<section class="grid g-kpi" id="d-kpis"></section>
+<section class="card">
+  <div class="card-head"><div><h3>Below-market listings</h3><p class="hint">USD/m² vs the median of the same type, deal, neighbourhood and room count (8+ comparables). Saving = (benchmark − price/m²) × area.</p></div>
+    <div class="actions"><span class="fcount">Min discount</span><div class="seg" id="disc"><button data-v="10">10%</button><button data-v="15" class="on">15%</button><button data-v="25">25%</button><button data-v="35">35%</button></div></div></div>
+  <div class="tbl-wrap" style="max-height:560px"><table class="tbl" id="t-deals"></table></div>
+</section>
+<section class="card">
+  <div class="card-head"><div><h3>Price changes since last scrape</h3><p class="hint" id="drop-hint">Listings whose asking price changed between the two latest runs</p></div>
+    <div class="actions"><div class="seg" id="dir"><button data-v="down" class="on">Drops</button><button data-v="up">Rises</button></div></div></div>
+  <div class="tbl-wrap" style="max-height:560px"><table class="tbl" id="t-drops"></table></div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="/static/js/pages/deals.js?v=7"></script>{% endblock %}

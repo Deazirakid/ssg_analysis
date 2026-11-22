@@ -1,0 +1,27 @@
+{% extends "base.html" %}{% import "_ui.html" as ui %}
+{% block filters %}{% endblock %}
+{% block content %}
+<section class="grid g-3">
+  <div class="card"><div class="card-head"><div><h3>Data source</h3><p class="hint">MariaDB → in-memory analytics cache</p></div></div><dl class="kv" id="src"></dl>
+    <div style="display:flex;gap:8px;margin-top:14px"><button class="btn primary" id="reload"><i data-lucide="database-zap"></i>Reload from database</button></div></div>
+  <div class="card"><div class="card-head"><div><h3>Scrape pipeline</h3><p class="hint" id="pl-hint"></p></div></div><dl class="kv" id="pl"></dl>
+    <div style="display:flex;gap:8px;margin-top:14px"><button class="btn primary" id="pl-run"><i data-lucide="play"></i>Run now</button></div></div>
+  <div class="card"><div class="card-head"><div><h3>Schedule</h3><p class="hint">Runs scrape → clean → MariaDB → reload → alerts</p></div></div>
+    <div class="form-grid">
+      <label class="ms-opt"><input type="checkbox" id="sc-on">Enabled</label>
+      <div class="field"><label>Every (hours)</label><input class="input" id="sc-every" type="number" min="1" value="24"></div>
+      <div class="field"><label>Preferred hour (0-23)</label><input class="input" id="sc-hour" type="number" min="0" max="23" value="4"></div>
+    </div><button class="btn" id="sc-save" style="margin-top:12px"><i data-lucide="save"></i>Save schedule</button></div>
+</section>
+<section class="card"><div class="card-head"><div><h3>Pipeline log</h3><p class="hint">Last 40 lines</p></div></div><div class="code" id="pl-log" style="max-height:260px">–</div></section>
+<section class="grid g-3">
+  <div class="card"><div class="card-head"><div><h3>Data quality (latest run)</h3></div></div><dl class="kv" id="quality"></dl></div>
+  <div class="card"><div class="card-head"><div><h3>Coordinate precision</h3></div></div><dl class="kv" id="precision"></dl></div>
+  {{ ui.table('t-runs', 'Scrape runs', '', '300px') }}
+</section>
+<section class="grid g-2">
+  {{ ui.table('t-logins', 'Sign-in log', 'Last 25 events (MariaDB auth_log)', '420px') }}
+  {{ ui.table('t-mix', 'Listings by type and deal', '', '420px') }}
+</section>
+{% endblock %}
+{% block scripts %}<script src="/static/js/pages/admin.js?v=7"></script>{% endblock %}

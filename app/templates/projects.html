@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% import "_ui.html" as ui %}
+{% block content %}
+<section class="grid g-kpi" id="p-kpis"></section>
+{{ ui.table('t-proj', 'Buildings & new-build projects', 'Listings sharing one exact map pin (≈ one building), new-build first · premium = building median USD/m² vs resale median in the same neighbourhood', '640px') }}
+{% endblock %}
+{% block scripts %}<script src="/static/js/pages/projects.js?v=7"></script>{% endblock %}

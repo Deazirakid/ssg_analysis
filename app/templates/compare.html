@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% import "_ui.html" as ui %}
+{% block head %}<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>{% endblock %}
+{% block content %}
+<section class="card"><div class="card-head"><div><h3>Pick up to 4 neighbourhoods</h3><p class="hint">Uses the property type, deal and price filters above; the neighbourhood filter is ignored.</p></div></div>
+  <div id="cmp-pick" style="display:flex;gap:8px;flex-wrap:wrap"></div></section>
+<section class="grid g-4" id="cmp-cards"></section>
+<section class="grid g-2">
+  {{ ui.chart('c-cmp-m2', 'USD/m² range', 'p25 · median · p75') }}
+  {{ ui.chart('c-cmp-rooms', 'Median USD/m² by rooms', 'Same property type and deal') }}
+</section>
+{% endblock %}
+{% block scripts %}<script src="/static/js/charts.js?v=7"></script><script src="/static/js/pages/compare.js?v=7"></script>{% endblock %}

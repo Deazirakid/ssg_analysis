@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <div class="card-head"><div><h3>Listings <span class="fcount" id="l-count"></span></h3><p class="hint">Click a column to sort · ID opens ss.ge · calculator icon opens the investment calculator</p></div>
+    <div class="actions">
+      <label class="fcount">Rows <select id="l-size" class="ctl" style="min-width:0;height:30px"><option>25</option><option selected>50</option><option>100</option><option>200</option></select></label>
+      <a class="btn" id="l-export" href="#"><i data-lucide="file-down"></i>CSV</a>
+      <a class="btn" id="l-xlsx" href="#"><i data-lucide="sheet"></i>Excel</a>
+      <button class="btn" id="l-sheets"><i data-lucide="cloud"></i>Google Sheets</button>
+    </div></div>
+  <div class="tbl-wrap" style="max-height:calc(100vh - 330px)"><table class="tbl" id="t-list"></table></div>
+  <div class="pager"><button class="btn" id="l-prev"><i data-lucide="chevron-left"></i>Prev</button><span id="l-page"></span><button class="btn" id="l-next">Next<i data-lucide="chevron-right"></i></button></div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="/static/js/listings.js?v=7"></script>{% endblock %}

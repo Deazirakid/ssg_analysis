@@ -1,0 +1,15 @@
+fastapi==0.115.6
+uvicorn[standard]==0.41.0
+jinja2==3.1.4
+python-multipart==0.0.22
+itsdangerous==2.2.0
+pydantic-settings==2.6.1
+python-dotenv>=1.0
+duckdb==2.0.1
+pandas>=2.1
+numpy>=1.26
+pyarrow>=14
+SQLAlchemy==2.0.48
+PyMySQL
+cryptography>=42
+xlsxwriter>=3.1

@@ -1,0 +1,8 @@
+{% macro chart(id, title, hint='', size='', icon='', actions='') -%}
+<div class="card"><div class="card-head"><div><h3>{{ title }}</h3>{% if hint %}<p class="hint">{{ hint }}</p>{% endif %}</div>{% if actions %}<div class="actions">{{ actions|safe }}</div>{% endif %}</div>
+<div class="chart {{ size }}"><canvas id="{{ id }}"></canvas></div></div>
+{%- endmacro %}
+{% macro table(id, title, hint='', maxh='520px', actions='') -%}
+<div class="card"><div class="card-head"><div><h3>{{ title }}</h3>{% if hint %}<p class="hint">{{ hint }}</p>{% endif %}</div>{% if actions %}<div class="actions">{{ actions|safe }}</div>{% endif %}</div>
+<div class="tbl-wrap" style="max-height:{{ maxh }}"><table class="tbl" id="{{ id }}"><tbody><tr><td class="empty">Loading…</td></tr></tbody></table></div></div>
+{%- endmacro %}

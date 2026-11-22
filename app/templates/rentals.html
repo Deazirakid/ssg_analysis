@@ -1,0 +1,13 @@
+{% extends "base.html" %}{% import "_ui.html" as ui %}
+{% block head %}<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>{% endblock %}
+{% block filters %}{% endblock %}
+{% block content %}
+<section class="card"><div class="card-head"><div><h3>Places</h3><p class="hint">Daily-rent listings (all property types). Supply by month uses the month each active listing was first posted.</p></div></div><div id="r-pick" style="display:flex;gap:6px;flex-wrap:wrap"></div></section>
+<section class="grid g-2">
+  {{ ui.chart('c-r-moy', 'Seasonality: listings posted by month of year', 'All selected places') }}
+  {{ ui.chart('c-r-night', 'Median price per night', 'USD by place') }}
+</section>
+{{ ui.chart('c-r-monthly', 'Supply over the last 24 months', 'New daily-rent listings per month by place', 'tall') }}
+{{ ui.table('t-r-city', 'By place', '', '420px') }}
+{% endblock %}
+{% block scripts %}<script src="/static/js/charts.js?v=7"></script><script src="/static/js/pages/rentals.js?v=7"></script>{% endblock %}

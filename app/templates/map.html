@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block head %}
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.9.4/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.9.4/mapbox-gl.js"></script>
+{% endblock %}
+{% block content %}
+<div class="map-wrap">
+  <div id="map"></div>
+  <div class="map-loading" id="map-loading">Loading…</div>
+  <div class="map-panel">
+    <h4>Layer</h4>
+    <div class="seg" id="layer-seg">
+      <button data-layer="grid" class="on">Price grid</button>
+      <button data-layer="heat">Heatmap</button>
+      <button data-layer="points">Points</button>
+      <button data-layer="clusters">Clusters</button>
+    </div>
+    <h4>Metric</h4>
+    <div class="seg" id="metric-seg">
+      <button data-metric="usd_per_m2" class="on">USD / m²</button>
+      <button data-metric="price_usd">Total price</button>
+    </div>
+    <div class="row"><span>Grid cell</span>
+      <select id="cell" class="ctl" style="min-width:0;height:28px">
+        <option value="0.002">~200 m</option><option value="0.004" selected>~400 m</option>
+        <option value="0.008">~800 m</option><option value="0.016">~1.6 km</option>
+      </select></div>
+    <div class="row"><span>3D extrude (height = listings)</span><input type="checkbox" id="extrude"></div>
+    <div class="row"><span>Metro stations</span><input type="checkbox" id="metro" checked></div>
+    <h4>Walk-time isochrone</h4>
+    <div class="row"><span>Click map after enabling</span><input type="checkbox" id="iso"></div>
+    <div class="seg" id="iso-seg"><button data-min="10" class="on">10 min</button><button data-min="20">20 min</button></div>
+    <div class="row"><span id="map-count" class="tabular"></span></div>
+  </div>
+  <div class="legend" id="legend"></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>window.MAPBOX_TOKEN = {{ mapbox_token|tojson }}; window.MAPBOX_STYLE = {{ mapbox_style|tojson }};</script>
+<script src="/static/js/map.js?v=7"></script>
+{% endblock %}

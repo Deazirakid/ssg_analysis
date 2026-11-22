@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% import "_ui.html" as ui %}
+{% block filters %}{% endblock %}
+{% block content %}
+<div class="callout"><i data-lucide="lightbulb"></i><div>Set filters on any page and click <b>Save search</b>. After each data refresh (scheduled or manual), new listings and price drops that match it create alerts here and in the bell. For Telegram, set <code>TELEGRAM_BOT_TOKEN</code> and <code>TELEGRAM_CHAT_ID</code> in <code>.env</code>.</div></div>
+{{ ui.table('t-ss', 'Saved searches', '', '380px') }}
+{{ ui.table('t-al', 'Alerts', 'Newest first', '620px', '<button class="btn" id="al-read"><i data-lucide="check-check"></i>Mark all read</button><button class="btn" id="al-eval"><i data-lucide="refresh-cw"></i>Re-evaluate</button>') }}
+{% endblock %}
+{% block scripts %}<script src="/static/js/pages/alerts.js?v=7"></script>{% endblock %}

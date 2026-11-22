@@ -1,0 +1,15 @@
+{% extends "base.html" %}{% import "_ui.html" as ui %}
+{% block head %}<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>{% endblock %}
+{% block content %}
+<section class="grid g-kpi" id="t-kpis"></section>
+<section class="grid g-2">
+  {{ ui.chart('c-week', 'Weekly median asking USD/m²', 'Listings created each week (still active) · last 52 weeks') }}
+  {{ ui.chart('c-week-n', 'New listings per week', 'Supply flow') }}
+</section>
+{{ ui.chart('c-hoods', 'Neighbourhood trends', 'Weekly median USD/m² for the 6 largest neighbourhoods (or your neighbourhood filter)', 'tall') }}
+<section class="grid g-2">
+  {{ ui.chart('c-age', 'Days on market', 'Active listings by age since first posted') }}
+  {{ ui.table('t-age', 'Fastest & slowest neighbourhoods', 'Median days on market · stale = share older than 90 days', '300px') }}
+</section>
+{% endblock %}
+{% block scripts %}<script src="/static/js/charts.js?v=7"></script><script src="/static/js/pages/trends.js?v=7"></script>{% endblock %}

@@ -1,0 +1,60 @@
+run=20261122_1845 workers=48 combos=24
+[token] refreshed from Light Browser, valid ~56 min
+[map] Hotel         Pledge           0 pins
+[map] Country house Pledge           0 pins
+[map] Hotel         Daily rent      93 pins
+[map] Country house Rent           110 pins
+[map] Country house Daily rent     179 pins
+[map] Country house Sale           155 pins
+[map] Land          Pledge          10 pins
+[map] Land          Daily rent       1 pins
+[map] Land          Rent            90 pins
+[map] House         Pledge          27 pins
+[map] Hotel         Sale           784 pins
+[map] Hotel         Rent          1488 pins
+[map] Apartment     Pledge         284 pins
+[map] House         Daily rent    1247 pins
+[map] Commercial    Pledge           8 pins
+[map] Commercial    Daily rent       9 pins
+[map] Apartment     Daily rent    3594 pins
+[map] House         Rent          7428 pins
+[map] House         Sale          4571 pins
+[map] Commercial    Sale          3436 pins
+[map] Apartment     Rent         92056 pins
+[map] Apartment     Sale         59863 pins
+[map] Commercial    Rent         15189 pins
+[map] Land Sale FAILED (MapSearch failed after 7 tries: {'realEstateType': 3, 'realEstateDealType': 4, 'page': 1, 'pageSize': 30, 'order': 1}); detail fallback will fill coords
+[map] total 190622 pins in 41s
+[list] 7353 pages to fetch (~220590 listings)
+[list] 250/7353 pages, 7375 unique, 7 retries, 52s
+[list] 500/7353 pages, 14865 unique, 8 retries, 54s
+[list] 750/7353 pages, 22365 unique, 9 retries, 55s
+[list] 1000/7353 pages, 29865 unique, 9 retries, 55s
+[list] 1250/7353 pages, 37361 unique, 9 retries, 56s
+[list] 1500/7353 pages, 44861 unique, 9 retries, 57s
+[list] 1750/7353 pages, 52321 unique, 10 retries, 58s
+[list] 2000/7353 pages, 59814 unique, 10 retries, 60s
+[list] 2250/7353 pages, 67285 unique, 11 retries, 60s
+[list] 2500/7353 pages, 74785 unique, 11 retries, 61s
+[list] 2750/7353 pages, 82285 unique, 11 retries, 63s
+[list] 3000/7353 pages, 89785 unique, 12 retries, 65s
+[list] 3250/7353 pages, 97285 unique, 12 retries, 66s
+[list] 3500/7353 pages, 104785 unique, 12 retries, 69s
+[list] 3750/7353 pages, 112284 unique, 13 retries, 70s
+[list] 4000/7353 pages, 119784 unique, 13 retries, 72s
+[list] 4250/7353 pages, 127274 unique, 13 retries, 73s
+[list] 4500/7353 pages, 134758 unique, 13 retries, 75s
+[list] 4750/7353 pages, 142258 unique, 13 retries, 76s
+[list] 5000/7353 pages, 149758 unique, 13 retries, 78s
+[list] 5250/7353 pages, 157258 unique, 14 retries, 79s
+[list] 5500/7353 pages, 164758 unique, 14 retries, 80s
+[list] 5750/7353 pages, 172258 unique, 14 retries, 82s
+[list] 6000/7353 pages, 179758 unique, 14 retries, 83s
+[list] 6250/7353 pages, 187242 unique, 14 retries, 85s
+[list] 6500/7353 pages, 194742 unique, 14 retries, 86s
+[list] 6750/7353 pages, 202242 unique, 14 retries, 87s
+[list] 7000/7353 pages, 209742 unique, 14 retries, 88s
+[list] 7250/7353 pages, 217196 unique, 14 retries, 88s
+[list] page fail 3-4-240: LegendSearch failed after 7 tries: {'realEstateType': 3, 'realEstateDealType': 4, 'page': 240, 'pageSize': 30, 'order': 1}
+[detail] 127668 listings without pin -> fetching detail pages
+[detail] 1000/127668, 0 with coords, 143s

@@ -1,0 +1,13 @@
+{% extends "base.html" %}{% import "_ui.html" as ui %}
+{% block head %}<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>{% endblock %}
+{% block content %}
+<section class="grid g-2">
+  {{ ui.chart('c-metro', 'Price vs distance to metro', 'Median USD/m² per 250 m band (straight-line distance to nearest station)') }}
+  {{ ui.chart('c-center', 'Price vs distance to centre', 'Median USD/m² per km from Freedom Square') }}
+</section>
+<section class="grid g-21">
+  {{ ui.chart('c-stations', 'Median USD/m² within 800 m of each station', 'Stations with 10+ listings', 'tall') }}
+  {{ ui.table('t-stations', 'Stations', '', '560px') }}
+</section>
+{% endblock %}
+{% block scripts %}<script src="/static/js/charts.js?v=7"></script><script src="/static/js/pages/location.js?v=7"></script>{% endblock %}

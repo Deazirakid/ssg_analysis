@@ -1,0 +1,204 @@
+
+=== scrape.py  ===
+run=20261122_1924 workers=48 combos=24
+[token] refreshed from Light Browser, valid ~58 min
+[map] Country house Pledge           0 pins
+[map] Hotel         Pledge           0 pins
+[map] Hotel         Daily rent      93 pins
+[map] Country house Daily rent     179 pins
+[map] Land          Pledge          10 pins
+[map] Country house Rent           110 pins
+[map] Land          Daily rent       1 pins
+[map] Land          Rent            88 pins
+[map] House         Pledge          27 pins
+[map] Country house Sale           153 pins
+[map] Apartment     Pledge         284 pins
+[map] Hotel         Rent          1485 pins
+[map] Hotel         Sale           781 pins
+[map] Apartment     Daily rent    3614 pins
+[map] House         Rent          7421 pins
+[map] Commercial    Pledge           8 pins
+[map] Commercial    Daily rent       9 pins
+[map] House         Daily rent    1247 pins
+[map] Commercial    Sale          3433 pins
+[map] House         Sale          4563 pins
+[map] Commercial    Rent         15159 pins
+[map] Apartment     Sale         59805 pins
+[map] Apartment     Rent         91766 pins
+[map] Land Sale FAILED (MapSearch failed after 7 tries: {'realEstateType': 3, 'realEstateDealType': 4, 'page': 1, 'pageSize': 30, 'order': 1}); detail fallback will fill coords
+[map] total 190236 pins in 47s
+[list] 7355 pages to fetch (~220650 listings)
+[list] 250/7355 pages, 7404 unique, 9 retries, 59s
+[list] 500/7355 pages, 14851 unique, 9 retries, 62s
+[list] 750/7355 pages, 22351 unique, 10 retries, 63s
+[list] 1000/7355 pages, 29824 unique, 10 retries, 64s
+[list] 1250/7355 pages, 37324 unique, 10 retries, 64s
+[list] 1500/7355 pages, 44824 unique, 11 retries, 64s
+[list] 1750/7355 pages, 52301 unique, 11 retries, 65s
+[list] 2000/7355 pages, 59794 unique, 11 retries, 65s
+[list] 2250/7355 pages, 67269 unique, 11 retries, 66s
+[list] 2500/7355 pages, 74769 unique, 11 retries, 67s
+[list] 2750/7355 pages, 82269 unique, 11 retries, 67s
+[list] 3000/7355 pages, 89769 unique, 12 retries, 68s
+[list] 3250/7355 pages, 97268 unique, 12 retries, 70s
+[list] 3500/7355 pages, 104768 unique, 12 retries, 72s
+[list] 3750/7355 pages, 112268 unique, 12 retries, 73s
+[list] 4000/7355 pages, 119768 unique, 13 retries, 75s
+[list] 4250/7355 pages, 127236 unique, 13 retries, 76s
+[list] 4500/7355 pages, 134711 unique, 13 retries, 77s
+[list] 4750/7355 pages, 142211 unique, 13 retries, 79s
+[list] 5000/7355 pages, 149711 unique, 13 retries, 80s
+[list] 5250/7355 pages, 157211 unique, 14 retries, 82s
+[list] 5500/7355 pages, 164711 unique, 14 retries, 83s
+[list] 5750/7355 pages, 172211 unique, 14 retries, 84s
+[list] 6000/7355 pages, 179711 unique, 14 retries, 86s
+[list] 6250/7355 pages, 187196 unique, 14 retries, 87s
+[list] 6500/7355 pages, 194696 unique, 14 retries, 88s
+[list] 6750/7355 pages, 202196 unique, 14 retries, 90s
+[list] 7000/7355 pages, 209696 unique, 14 retries, 91s
+[list] 7250/7355 pages, 217144 unique, 14 retries, 92s
+[list] page fail 3-4-240: LegendSearch failed after 7 tries: {'realEstateType': 3, 'realEstateDealType': 4, 'page': 240, 'pageSize': 30, 'order': 1}
+{
+ "run": "20261122_1924",
+ "finished": "2026-11-22T19:26:04",
+ "seconds": 94,
+ "workers": 48,
+ "map_counts": {
+  "1-2": 0,
+  "2-2": 0,
+  "2-3": 93,
+  "1-3": 179,
+  "3-2": 10,
+  "1-1": 110,
+  "3-3": 1,
+  "3-1": 88,
+  "4-2": 27,
+  "1-4": 153,
+  "5-2": 284,
+  "2-1": 1485,
+  "2-4": 781,
+  "5-3": 3614,
+  "4-1": 7421,
+  "6-2": 8,
+  "6-3": 9,
+  "4-3": 1247,
+  "6-4": 3433,
+  "4-4": 4563,
+  "6-1": 15159,
+  "5-4": 59805,
+  "5-1": 91766,
+  "3-4": "failed"
+ },
+ "list_counts": {
+  "1-1": 355,
+  "1-3": 649,
+  "1-4": 897,
+  "1-2": 6,
+  "2-1": 3999,
+  "2-2": 3,
+  "2-3": 175,
+  "2-4": 2085,
+  "3-3": 1,
+  "3-1": 206,
+  "3-2": 85,
+  "3-4": 21183,
+  "4-1": 20726,
+  "4-2": 131,
+  "4-3": 3353,
+  "4-4": 13235,
+  "5-1": 57816,
+  "5-2": 621,
+  "5-3": 3425,
+  "5-4": 51225,
+  "6-1": 31934,
+  "6-3": 11,
+  "6-2": 13,
+  "6-4": 8112
+ },
+ "http": {
+  "req": 7661,
+  "retry": 14,
+  "fail": 2
+ }
+}
+
+=== clean.py  ===
+{
+ "run": "20261122_1924",
+ "total": 317874,
+ "clean": 183519,
+ "flag_no_price": 4964,
+ "flag_bad_coords": 8924,
+ "flag_generic_pin": 673,
+ "flag_no_area": 158,
+ "flag_outlier": 4656,
+ "flag_duplicate": 29629,
+ "flag_not_in_feed": 97628,
+ "feed_listings": 220246,
+ "source": {
+  "list only": 127638,
+  "map only": 97628,
+  "map+list": 92608
+ },
+ "tbilisi_clean": 131092,
+ "coord_precision_clean": {
+  "exact": 76581,
+  "street": 74854,
+  "city": 18961,
+  "none": 7991,
+  "subdistrict": 5028,
+  "district": 104
+ }
+}
+
+=== build_heatmap.py  ===
+wrote C:\Users\davit\ss-ge-realestate\output\heatmap.html (2.7 MB) 906 sale cells, 877 rent cells, 150852 points
+
+=== build_excel.py  ===
+wrote C:\Users\davit\ss-ge-realestate\output\ss_ge_real_estate_dashboard.xlsx
+
+=== build_app_data.py  ===
+duplicate clusters: 19980
+wrote C:\Users\davit\ss-ge-realestate\data\app\listings.parquet 183519 rows 9.5 MB
+
+=== load_mysql.py  ===
+  listings 5000/183519
+  listings 10000/183519
+  listings 15000/183519
+  listings 20000/183519
+  listings 25000/183519
+  listings 30000/183519
+  listings 35000/183519
+  listings 40000/183519
+  listings 45000/183519
+  listings 50000/183519
+  listings 55000/183519
+  listings 60000/183519
+  listings 65000/183519
+  listings 70000/183519
+  listings 75000/183519
+  listings 80000/183519
+  listings 85000/183519
+  listings 90000/183519
+  listings 95000/183519
+  listings 100000/183519
+  listings 105000/183519
+  listings 110000/183519
+  listings 115000/183519
+  listings 120000/183519
+  listings 125000/183519
+  listings 130000/183519
+  listings 135000/183519
+  listings 140000/183519
+  listings 145000/183519
+  listings 150000/183519
+  listings 155000/183519
+  listings 160000/183519
+  listings 165000/183519
+  listings 170000/183519
+  listings 175000/183519
+  listings 180000/183519
+  listings 183519/183519
+loaded 183519 listings into MySQL (run 20261122_1924)
+
+Done -> output/ss_ge_real_estate_dashboard.xlsx, output/heatmap.html, data/clean/*.csv

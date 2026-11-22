@@ -1,0 +1,33 @@
+{% extends "base.html" %}{% import "_ui.html" as ui %}
+{% block head %}<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>{% endblock %}
+{% block filters %}{% endblock %}
+{% block content %}
+<section class="card"><div class="card-head"><div><h3>Listing</h3><p class="hint">Enter an ss.ge listing ID, or open it from the map or listings table. Rent is pre-filled from the neighbourhood median for the same room count.</p></div></div>
+  <div style="display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap">
+    <div class="field" style="width:200px"><label>Listing ID</label><input class="input" id="i-id" inputmode="numeric"></div>
+    <button class="btn primary" id="i-load"><i data-lucide="download"></i>Load</button>
+    <div id="i-info" style="margin-left:8px;color:var(--ink-2);font-size:13px"></div>
+  </div></section>
+<section class="grid g-12">
+  <div class="card"><div class="card-head"><div><h3>Assumptions</h3><p class="hint">Edit any value; results update live</p></div></div>
+    <div class="form-grid" id="i-form">
+      <div class="field"><label>Price (USD)</label><input class="input" data-k="price" type="number" value="120000"></div>
+      <div class="field"><label>Area (m²)</label><input class="input" data-k="area" type="number" value="70"></div>
+      <div class="field"><label>Down payment %</label><input class="input" data-k="down" type="number" value="30"></div>
+      <div class="field"><label>Interest rate %</label><input class="input" data-k="rate" type="number" step="0.1" value="11"></div>
+      <div class="field"><label>Term (years)</label><input class="input" data-k="years" type="number" value="15"></div>
+      <div class="field"><label>Monthly rent (USD)</label><input class="input" data-k="rent" type="number" value="700"></div>
+      <div class="field"><label>Vacancy %</label><input class="input" data-k="vac" type="number" value="8"></div>
+      <div class="field"><label>Running costs % of rent</label><input class="input" data-k="costs" type="number" value="12"></div>
+      <div class="field"><label>Renovation + closing (USD)</label><input class="input" data-k="extra" type="number" value="5000"></div>
+      <div class="field"><label>Rental income tax %</label><input class="input" data-k="tax" type="number" value="5"></div>
+      <div class="field"><label>Annual appreciation %</label><input class="input" data-k="appr" type="number" step="0.1" value="4"></div>
+      <div class="field"><label>Hold period (years)</label><input class="input" data-k="hold" type="number" value="10"></div>
+    </div></div>
+  <div class="grid" style="gap:16px;align-content:start">
+    <section class="grid g-kpi" id="i-kpis"></section>
+    {{ ui.chart('c-inv', 'Cash flow and equity over the hold period', 'Cumulative net cash flow, equity (value − remaining loan) and total return') }}
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="/static/js/charts.js?v=7"></script><script src="/static/js/pages/invest.js?v=7"></script>{% endblock %}

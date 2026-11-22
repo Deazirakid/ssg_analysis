@@ -1,0 +1,27 @@
+{
+ "run": "20261122_1924",
+ "total": 317874,
+ "clean": 183519,
+ "flag_no_price": 4964,
+ "flag_bad_coords": 8924,
+ "flag_generic_pin": 673,
+ "flag_no_area": 158,
+ "flag_outlier": 4656,
+ "flag_duplicate": 29629,
+ "flag_not_in_feed": 97628,
+ "feed_listings": 220246,
+ "source": {
+  "list only": 127638,
+  "map only": 97628,
+  "map+list": 92608
+ },
+ "tbilisi_clean": 131092,
+ "coord_precision_clean": {
+  "exact": 76581,
+  "street": 74854,
+  "city": 18961,
+  "none": 7991,
+  "subdistrict": 5028,
+  "district": 104
+ }
+}

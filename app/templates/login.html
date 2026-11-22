@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign in · ss.ge Market</title>
+<script>try{const t=localStorage.getItem('ssge.theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/app.css?v=7">
+</head>
+<body>
+<div class="login-page">
+  <div class="login-art">
+    <div class="grid-bg"></div>
+    <div class="brand" style="position:relative;padding:0;color:#fff"><div class="logo">SS</div><div>Market Panel<small style="color:rgba(255,255,255,.6)">ss.ge real estate intelligence</small></div></div>
+    <div>
+      <h2>Every listing in Georgia, priced, mapped and tracked.</h2>
+      <p>Neighbourhood benchmarks, below-market deals, price drops between scrapes, rental yields and walk-time maps.</p>
+      <div class="stats"><div><b>180k+</b><span>clean listings</span></div><div><b>24</b><span>type × deal segments</span></div><div><b>Daily</b><span>refresh ready</span></div></div>
+    </div>
+    <div style="position:relative;color:rgba(255,255,255,.45);font-size:12px">Private dashboard · access is logged</div>
+  </div>
+  <div class="login-side">
+    <form class="login-card" method="post" action="/login" autocomplete="on">
+      <div class="brand" style="padding:0"><div class="logo">SS</div><div>Market Panel</div></div>
+      <h1>Welcome back</h1>
+      <p>Sign in with your admin or viewer account.</p>
+      {% if error %}<div class="err">{{ error }}</div>{% endif %}
+      <input type="hidden" name="next" value="{{ next }}">
+      <div class="field"><label for="u">Username</label><input class="input" id="u" name="username" autocomplete="username" required autofocus></div>
+      <div class="field"><label for="p">Password</label><input class="input" id="p" name="password" type="password" autocomplete="current-password" required></div>
+      <button class="btn primary" type="submit">Sign in</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>
